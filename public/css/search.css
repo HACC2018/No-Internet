@@ -2,7 +2,7 @@ body {
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-rows: 0.5fr 2.5em 5fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr 6fr 0.6fr;
   /* background-color: purple; */
   margin: 0;
   padding: 0;
@@ -10,42 +10,49 @@ body {
 
 #searchBar {
   display: grid;
-  grid-template-columns: 1fr 2.75em;
+  grid-template-columns: 1fr;
 }
 
 #searchUsersInput {
   height: 80%;
-  width: 95%;
+  width: 90%;
   margin: auto;
   border-radius: 1.25em;
   border: 1px solid black !important;
-  padding-left: 1em; 
+  padding-left: 1em;
+  padding-right: 2.5em;
   box-sizing: border-box;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-size: 1em;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 #searchUsersInput:focus {
   /* changes outline of search input to purple when focused */
-  border: 1px solid var(--main-purple) !important;
-  box-shadow: 0 0 3px var(--main-purple) !important;
-  -moz-box-shadow: 0 0 3px var(--main-purple) !important;
-  -webkit-box-shadow: 0 0 3px var(--main-purple) !important;
-  outline-offset: 0px !important;
+  /* border: 1px solid var(--main-purple) !important; */
+  /* box-shadow: 0 0 3px var(--main-purple) !important; */
+  /* -moz-box-shadow: 0 0 3px var(--main-purple) !important; */
+  /* -webkit-box-shadow: 0 0 3px var(--main-purple) !important; */
+  /* outline-offset: 0px !important; */
   outline: none !important;
 }
 
 #searchUserButton {
-  font-size: 1.7em;
+  position: relative;
+}
+
+#searchUserButton i {
+  font-size: 1.1em;
   margin: auto;
+  position: absolute;
+  top: 18%;
+  right: 8%;
 }
 
 #searchUserButton:hover {
-  color: var(--main-purple);
-}
-
-:root {
-  --main-purple: #B885FE;
+  /* color: var(--main-purple); */
 }
 
 #topBar {
@@ -79,22 +86,22 @@ body {
 #userIconCircle {
   width: 45px;
   height: 45px;
-  background-color: var(--main-purple);
+  background-color: var(--main-dark-purple);
   border-radius: 50%;
   margin: auto;
 }
 
-#appName {
+/* #appName {
   box-sizing: border-box;
   padding-left: 1em;
 }
 
 #appName h1 {
   text-align: left;
-  font-family: 'Lato';
-  font-weight: lighter;
+  font-family: 'Pacifico';
+  font-weight: 400;
   font-size: 2em;
-}
+} */
 
 #filterButton {
   /* background-color: blue; */
@@ -110,70 +117,49 @@ body {
   font-size: 1.5em;
 }
 
-#bottomBar {
-  width: 100%;
-  border-top: 1px solid #A0A0A0;
-  height: 3em;
-}
-
-#bottomBarGrid {
-  display: grid;
-  width: 95%;
-  margin: auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 100%;
-}
-
-#homeButton {
-}
-
-#searchButton {
-}
-
-#alertsButton {
-}
-
-#searchButton i {
-  color: var(--main-purple)
-}
+/* #searchButton i {
+  color: var(--main-purple);
+} */
 
 #homeButton i,
 #searchButton i,
 #alertsButton i {
-  font-size: 2em;
+  font-size: 1.5em;
   transition: 0.3s;
 }
 
 #homeButton i:hover,
 #searchButton i:hover,
 #alertsButton i:hover {
-  color: var(--main-purple)
+  color: var(--main-purple);
 }
 
 #mainContent {
   overflow-y: scroll;
-  background-color: #D0D0D0;
+  background-color: #d0d0d0;
 }
 
 .userItem {
   background-color: white;
   width: 100%;
-  height: 80px;
-  border-bottom: 1px solid #A0A0A0;
+  height: 100px;
+  border-bottom: 1px solid #a0a0a0;
   /* display: grid;
   grid-template-rows: 70px 1.2em; */
   display: grid;
   grid-template-columns: 80px 1fr;
-  font-family: 'Lato';
+  font-family: "Lato";
+  padding-left: 0.5em;
 }
 
 .userItem:last-child {
   border-bottom: none;
 }
 
-#similarUsersContainer, #allUsersContainer {
+#similarUsersContainer,
+#allUsersContainer {
   overflow-y: scroll;
-  
+
   width: 100%;
   height: 100%;
 }
@@ -183,19 +169,24 @@ body {
 }
 
 #searchGreeting {
-  margin-top: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   width: 100%;
   height: 70px;
   display: grid;
   grid-template-columns: 70px 1fr;
-  border-bottom: 1px solid #A0A0A0;
+  /* border-bottom: 1px solid #a0a0a0; */
+  padding-left: 1em;
+  color: rgb(87, 87, 87);
 }
 
 #connectIcon {
   display: flex;
+  opacity: 0.75;
 }
 
-#connectIcon img, .user-icon img {
+#connectIcon img,
+.user-icon img {
   width: 75%;
   height: 75%;
   margin: auto;
@@ -206,10 +197,11 @@ body {
 }
 
 #greetingMsg {
-  font-family: 'Lato';
+  font-family: "Lato";
   vertical-align: middle;
   padding: 0.5em;
   font-size: 1.1em;
+  padding-right: 2em;
 }
 
 #userSubject {
@@ -223,20 +215,20 @@ body {
 /* .row1 {
   width: 100%;
   height: 100%;
-  
+
 } */
 
 .rowWrapper {
   width: 100%;
   height: 100%;
   font-size: 0.7em;
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
 
 .infoContainer {
   padding-left: 1em;
   box-sizing: border-box;
-  padding-top: 0.5em;
+  padding-top: 1em;
 }
 
 .infoContainer p {
